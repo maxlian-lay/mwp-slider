@@ -22,7 +22,7 @@
         if( is_object( $screen ) && $cpt == $screen->post_type ){
 			    wp_register_style('font_awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css');
 		    	wp_enqueue_style( 'font_awesome' );
-		    	wp_register_style( 'mwp_admin_css', plugin_dir_url(__FILE__).'mwp-css/mwp-style.css');
+		    	wp_register_style( 'mwp_admin_css', plugin_dir_url(__FILE__).'mwp-css/mwp-admin-style.css');
 					wp_enqueue_style( 'mwp_admin_css' );
 
 					wp_register_script('mwp_admin_scripts', plugin_dir_url(__FILE__).'mwp-js/mwp-admin.js', $deps = array(), $ver = false, $in_footer = true);
@@ -37,7 +37,11 @@
 	  }
 
 	  public function mwp_load_scripts(){
-			wp_register_script('mwp_scripts', plugin_dir_url(__FILE__).'includes/mwp-js/mwp-slider.js', $deps = array(), $ver = false, $in_footer = true);
+	  	wp_register_style( 'mwp_css', plugin_dir_url(__FILE__).'mwp-css/mwp-style.css');
+					wp_enqueue_style( 'mwp_css' );
+	  	wp_register_script('jQuery_js', 'https://code.jquery.com/jquery-2.2.4.min.js', $deps = array(), $ver = false, $in_footer = true);
+      wp_enqueue_script('jQuery_js');
+			wp_register_script('mwp_scripts', plugin_dir_url(__FILE__).'mwp-js/mwp-slider.js', $deps = array(), $ver = false, $in_footer = true);
     	wp_enqueue_script('mwp_scripts');
       wp_register_style( 'materialize_css', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css');
 			wp_enqueue_style( 'materialize_css' );

@@ -1,8 +1,23 @@
-.mwp-slider-box-child{
-	border-top: 1px solid #DCDCDC;
-	padding-top: 15px;
+.slider .indicators .indicator-item {
+  background-color: #666666;
+  border: 3px solid #ffffff;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.slider .indicators .indicator-item.active {
+  background-color: #ffffff;
+}
+.slider {
+  width: 900px;
+  margin: 0 auto;
 }
 
-.fa.fa-trash-o{
-	color: red;
+.slider .slides{
+  height: 100% !important;
+}
+
+.slider .indicators {
+  bottom: 60px;
+  z-index: 100;
 }
