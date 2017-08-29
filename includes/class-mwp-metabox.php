@@ -23,7 +23,7 @@
 					if ( isset( $mwpSliderDetail['imageUrl'] ) || isset( $mwpSliderDetail['sliderCaption'] ) ) {
 						printf( '
 							<p class="mwp-slider-box">
-								<a href="#" class="remove-package pull-right">%4$s</a>
+								<a href="#" class="remove-package pull-right">%6$s</a>
 								<label>Image url: </label>
 								<br/>
 								<input id="mwpSliderDetails[%1$s][imageUrl]" name="mwpSliderDetails[%1$s][imageUrl]" type="text" value="%2$s"  style="width:400px;" />
@@ -31,11 +31,19 @@
     						<br/>
     						<img src="%2$s" style="width:200px;" id="mwpSliderDetails[%1$s][imageUrl]"  />
 								<br/><br/>
-								<label>Slider caption: </label>
+								<label>Center slider caption: </label>
 								<br/>
-								<textarea name="mwpSliderDetails[%1$s][sliderCaption]"  rows="4" cols="50" >%3$s</textarea>
+								<textarea name="mwpSliderDetails[%1$s][sliderCaptionCenter]"  rows="4" cols="50" >%3$s</textarea>
 								<br/>
-							</p>', $c, $mwpSliderDetail['imageUrl'], $mwpSliderDetail['sliderCaption'], '<i class="fa fa-trash-o fa-2x" aria-hidden="true""></i>' );
+								<label>Left slider caption: </label>
+								<br/>
+								<textarea name="mwpSliderDetails[%1$s][sliderCaptionLeft]"  rows="4" cols="50" >%4$s</textarea>
+								<br/>
+								<label>Right slider caption: </label>
+								<br/>
+								<textarea name="mwpSliderDetails[%1$s][sliderCaptionRight]"  rows="4" cols="50" >%5$s</textarea>
+								<br/>
+							</p>', $c, $mwpSliderDetail['imageUrl'], $mwpSliderDetail['sliderCaptionCenter'], $mwpSliderDetail['sliderCaptionLeft'], $mwpSliderDetail['sliderCaptionRight'], '<i class="fa fa-trash-o fa-2x" aria-hidden="true""></i>' );
 						$c = $c +1;
 					}
 				}
@@ -50,7 +58,7 @@
 					var count = <?php echo $c; ?>;
 					$(".add_package").click(function() {
 						count = count + 1;
-						$('#output-package').append('<p class="mwp-slider-box-child"><a href="#" class="remove-package pull-right"><?php echo '<i class="fa fa-trash-o fa-2x" aria-hidden="true""></i>'; ?></a><label>Image url: </label><br/><input id="mwpSliderDetails['+count+'][imageUrl]" name="mwpSliderDetails['+count+'][imageUrl]" type="text" value="%2$s"  style="width:400px;" /><input class="my_upl_button" type="button" value="Upload Image" /><br/><img src="%2$s" style="width:200px;" id="mwpSliderDetails['+count+'][imageUrl]"  /><br/><br/><label>Slider caption: </label><br/><textarea name="mwpSliderDetails['+count+'][sliderCaption]" rows="4" cols="50" ></textarea><br/></p>' );
+						$('#output-package').append('<p class="mwp-slider-box-child"><a href="#" class="remove-package pull-right"><?php echo '<i class="fa fa-trash-o fa-2x" aria-hidden="true""></i>'; ?></a><label>Image url: </label><br/><input id="mwpSliderDetails['+count+'][imageUrl]" name="mwpSliderDetails['+count+'][imageUrl]" type="text" value="%2$s"  style="width:400px;" /><input class="my_upl_button" type="button" value="Upload Image" /><br/><img src="%2$s" style="width:200px;" id="mwpSliderDetails['+count+'][imageUrl]"  /><br/><br/><label>Center slider caption: </label><br/><textarea name="mwpSliderDetails['+count+'][sliderCaptionCenter]" rows="4" cols="50" ></textarea><br/><label>Left slider caption: </label><br/><textarea name="mwpSliderDetails['+count+'][sliderCaptionLeft]" rows="4" cols="50" ></textarea><br/><label>Right slider caption: </label><br/><textarea name="mwpSliderDetails['+count+'][sliderCaptionRight]" rows="4" cols="50" ></textarea><br/></p>' );
 							return false;
 					});
 					$(document.body).on('click','.remove-package',function() {

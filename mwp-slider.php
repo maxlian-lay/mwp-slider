@@ -47,10 +47,14 @@ class Mwp_Slider extends WP_Widget {
 			    		?>
 								<li>
 					        <img src="<?php echo $key['imageUrl'] ?>">
-					        <div class="caption center-align">
-					          <h5 class="light grey-text text-lighten-3">
-					          	<?php echo $key['sliderCaption']; ?>
-					          </h5>
+					        <div class="caption center-align mwp-center-caption">
+					          <?php echo $key['sliderCaptionCenter']; ?>
+					        </div>
+					        <div class="caption center-align mwp-left-caption">
+					          <?php echo $key['sliderCaptionLeft']; ?>
+					        </div>
+					        <div class="caption center-align mwp-right-caption">
+					          <?php echo $key['sliderCaptionRight']; ?>
 					        </div>
 					      </li>
 			    		<?php	

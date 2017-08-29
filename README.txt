@@ -6,7 +6,3 @@ Special thanks for contributors and other sources:
 
 http://www.codescafe.com/adding-infinite-multiple-custom-fields-in-wordpress/
 https://premium.wpmudev.org/blog/creating-meta-boxes/
-
-How to use:
-
-Just call Mwp_Slider::get_slider(); anywhere you would want to put the images on.

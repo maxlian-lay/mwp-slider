@@ -21,3 +21,33 @@
   bottom: 60px;
   z-index: 100;
 }
+
+.mwp-left-caption{
+  transform: translate(-20%,20%) !important;
+  max-width: 500px !important;
+  text-align: left !important;
+}
+
+.mwp-right-caption{
+  transform: translate(100%,20%) !important;
+  max-width: 500px !important;
+  text-align: left !important;
+}
+
+.btn.pill{
+  border-radius: 16px;
+  background-color: #fff;
+  color: #145f65;
+}
+
+.mwp-left-caption i.fa-arrow-circle-right{
+  font-size: 2em !important;
+  line-height: 15px !important;
+  transform: translate(25%,25%);
+}
+
+.mwp-right-caption i.fa-arrow-circle-right{
+  font-size: 2em !important;
+  line-height: 15px !important;
+  transform: translate(25%,25%);
+}
