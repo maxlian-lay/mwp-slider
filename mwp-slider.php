@@ -26,24 +26,59 @@ class Mwp_Slider extends WP_Widget {
 	function get_slider(){
 		$posts_args= array(
 								'numberposts' => 1,
+								'title' => 'website',
 								'post_type' => 'mwp_slider',
 	              'post_status' => 'publish',
 								'orderby' => 'date',
 								'order' => 'DESC'
 								);
 		$posts_list = get_posts($posts_args);
+
+
+    $mobile_args= array(
+    							'numberposts' => 1,
+									'title' => 'mobile',
+									'post_type' => 'mwp_slider',
+									'post_status' => 'publish',
+									'order' => 'DESC'
+									);
+    $mobile_posts = get_posts($mobile_args);
 		?>
 
 	  <div class="content">
 	    <div id="slideshow">
 	      <?php
 	      	$post_meta = get_post_meta($posts_list[0]->ID, 'mwpSliderDetails', true);
+	      	$mobile_meta = get_post_meta($mobile_posts[0]->ID, 'mwpSliderDetails', true);
 	      ?>
 
-	      <div class="slider">
+	      <div class="slider hidden-xs">
 			    <ul class="slides">
 			    	<?php
 			    		foreach ($post_meta as $key) {
+			    		?>
+								<li>
+					        <img src="<?php echo $key['imageUrl'] ?>">
+					        <div class="caption center-align mwp-center-caption">
+					          <?php echo $key['sliderCaptionCenter']; ?>
+					        </div>
+					        <div class="caption center-align mwp-left-caption">
+					          <?php echo $key['sliderCaptionLeft']; ?>
+					        </div>
+					        <div class="caption center-align mwp-right-caption">
+					          <?php echo $key['sliderCaptionRight']; ?>
+					        </div>
+					      </li>
+			    		<?php	
+			    		}
+			    	?>
+			    </ul>
+			  </div>
+
+			  <div class="slider visible-xs-block">
+			    <ul class="slides">
+			    	<?php
+			    		foreach ($mobile_meta as $key) {
 			    		?>
 								<li>
 					        <img src="<?php echo $key['imageUrl'] ?>">

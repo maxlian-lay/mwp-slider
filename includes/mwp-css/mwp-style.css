@@ -40,6 +40,12 @@
   color: #145f65;
 }
 
+.mwp-center-caption i.fa-arrow-circle-right{
+  font-size: 2em !important;
+  line-height: 15px !important;
+  transform: translate(25%,25%);
+}
+
 .mwp-left-caption i.fa-arrow-circle-right{
   font-size: 2em !important;
   line-height: 15px !important;
