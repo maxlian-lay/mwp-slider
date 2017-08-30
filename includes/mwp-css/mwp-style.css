@@ -24,14 +24,46 @@
 
 .mwp-left-caption{
   transform: translate(-20%,20%) !important;
-  max-width: 500px !important;
+  // max-width: 500px !important;
   text-align: left !important;
 }
 
 .mwp-right-caption{
   transform: translate(100%,20%) !important;
-  max-width: 500px !important;
+  // max-width: 500px !important;
   text-align: left !important;
+}
+
+@media (min-width: 768px){
+  .mwp-left-caption{
+    transform: translate(-20%,0%) !important;
+    max-width: 300px !important;
+  }
+
+  .mwp-right-caption{
+    transform: translate(100%,0%) !important;
+    max-width: 300px !important;
+  }
+}
+
+@media (min-width: 1024px){
+  .mwp-left-caption{
+    max-width: 400px !important;
+  }
+
+  .mwp-right-caption{
+    max-width: 400px !important;
+  }
+}
+
+@media (min-width: 1124px){
+  .mwp-left-caption{
+    max-width: 500px !important;
+  }
+
+  .mwp-right-caption{
+    max-width: 500px !important;
+  }
 }
 
 .btn.pill{
